@@ -62,8 +62,8 @@ Creates a new address for receiving assets.
 
 Arguments:
 - `asset-pool-id`: The ID of the asset pool
-- `network`: The network (e.g., ETHEREUM)
-- `asset`: The asset (e.g., USDT)
+- `network`: The network (e.g., ETHEREUM, TRON, SOLANA, POLYGON, BINANCE)
+- `asset`: The asset (e.g., USDT, USDC, ETH)
 - `reference`: A reference for the address
 
 #### create-address-by-asset
@@ -76,10 +76,40 @@ Creates addresses for all supported networks for a specific asset.
 
 Arguments:
 - `asset-pool-id`: The ID of the asset pool
-- `asset`: The asset (e.g., USDT)
+- `asset`: The asset (e.g., USDT, USDC, ETH)
 - `reference`: A reference for the addresses
 
-This command will create addresses for all supported networks for the specified asset and poll for updates until all addresses are created or timeout occurs.
+This command will create addresses for all supported networks for the specified asset and poll for updates until all addresses are created.
+
+#### create-transaction
+
+Creates a new blockchain transaction.
+
+```bash
+./layer1_cli --client-id <client-id> --key-file <path-to-private-key> create-transaction --asset-pool-id <pool-id> --network <network> --asset <asset> --to <address> --amount <amount> [--reference <ref>]
+```
+
+Arguments:
+- `asset-pool-id`: The ID of the asset pool
+- `network`: The network (e.g., ETHEREUM, TRON, SOLANA, POLYGON, BINANCE)
+- `asset`: The asset (e.g., USDT, USDC, ETH)
+- `to`: The destination address
+- `amount`: The amount to transfer
+- `reference` (optional): A reference for the transaction
+
+#### list-transactions
+
+Lists transactions by reference.
+
+```bash
+./layer1_cli --client-id <client-id> --key-file <path-to-private-key> list-transactions --asset-pool-id <pool-id> --reference <ref>
+```
+
+Arguments:
+- `asset-pool-id`: The ID of the asset pool
+- `reference`: The reference to search for
+
+The command will display all transactions (deposits and withdrawals) associated with the given reference.
 
 ## Development
 
