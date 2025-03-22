@@ -1,0 +1,14 @@
+---
+description: 
+globs: *.c,*.h
+alwaysApply: false
+---
+
+# C rules
+* Use CMake to compile your code, always make sure it compiles after a batch of changes
+* Test your work using the credentials provided
+* The client should return struct's which can be easily destroy/free'd after processing
+* Use other commands as examples when creating new commands
+* DRY - do not repeat yourself, break code into reusable pieces
+* Use openssl for cryptographic operations
+* Use memory safe string functions wherever possible

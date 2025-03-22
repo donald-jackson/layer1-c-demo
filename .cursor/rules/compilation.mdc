@@ -1,0 +1,23 @@
+---
+description: 
+globs: *.c,*.h
+alwaysApply: false
+---
+
+# Always compile
+
+- You must always compile your work, if it doesn't compile fix it and try again.
+
+## Building
+
+```bash
+# Create build directory
+mkdir -p build
+cd build
+
+# Configure with CMake
+cmake ..
+
+# Build
+make
+```
